@@ -1,4 +1,7 @@
 .title-txt { /* 제목에 width를 정하는 것은 좋지 않다. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 50px;
   text-align: center;
   text-transform: uppercase;
@@ -216,9 +219,6 @@
 
 
   .expertise {
-    .title-txt {
-      width: 400px;
-    }
 
     .list-box {
       display: flex;

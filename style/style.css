@@ -509,6 +509,9 @@ footer p {
 
 .title-txt {
   /* 제목에 width를 정하는 것은 좋지 않다. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 50px;
   text-align: center;
   text-transform: uppercase;
@@ -658,8 +661,6 @@ footer p {
 .resume {
   padding: 100px 0;
   background: #f7f7f7; }
-  .resume .expertise .title-txt {
-    width: 400px; }
   .resume .expertise .list-box {
     display: flex;
     flex-wrap: wrap;
