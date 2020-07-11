@@ -462,6 +462,18 @@ body {
   max-width: 1230px;
   margin: 0 auto;
   padding: 0 15px; }
+  @media only screen and (max-width: 1200px) {
+    .container {
+      max-width: 992px; } }
+  @media only screen and (max-width: 992px) {
+    .container {
+      max-width: 100%; } }
+  @media only screen and (max-width: 768px) {
+    .container {
+      max-width: 100%; } }
+  @media only screen and (max-width: 542px) {
+    .container {
+      max-width: 100%; } }
 
 .section {
   padding: 100px 0 80px; }
@@ -491,14 +503,44 @@ body {
     font-weight: 600; }
   .header nav {
     display: flex; }
+    @media only screen and (max-width: 768px) {
+      .header nav {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        width: 300px;
+        background: #fff;
+        border-right: 1px solid #ddd;
+        flex-direction: column;
+        justify-content: center;
+        transform: translateX(-97%);
+        transition: 0.6s; }
+        .header nav:hover {
+          transform: none; } }
     .header nav .nav-link {
       display: flex;
       /* a링크에 혹시 몰라 블록개념 주기 */
       text-transform: uppercase;
       padding: 20px;
       color: #333; }
+      @media only screen and (max-width: 768px) {
+        .header nav .nav-link {
+          justify-content: center;
+          transition: 0.5s; }
+          .header nav .nav-link:hover {
+            background: #f7f8f9;
+            transition: 0.5s; } }
       .header nav .nav-link:hover {
         color: #ff5252; }
+  .header .btn-menu {
+    font-size: 30px;
+    padding: 10px 30px;
+    display: none; }
+    @media only screen and (max-width: 768px) {
+      .header .btn-menu {
+        display: block; } }
 
 footer p {
   display: flex;
@@ -591,6 +633,12 @@ footer p {
       flex: 5;
       text-align: center;
       /* 인라인요소는 부모에 ta:c를 주면 가운데로 온다. */ }
+      @media only screen and (max-width: 768px) {
+        .bio .container .bio-content .photo {
+          display: none; } }
+      @media only screen and (max-width: 542px) {
+        .bio .container .bio-content .photo {
+          display: none; } }
       .bio .container .bio-content .photo img {
         width: 300px;
         height: 300px;
@@ -598,15 +646,26 @@ footer p {
         object-fit: cover; }
     .bio .container .bio-content .text {
       flex: 6; }
+      @media only screen and (max-width: 768px) {
+        .bio .container .bio-content .text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center; } }
+      @media only screen and (max-width: 542px) {
+        .bio .container .bio-content .text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center; } }
       .bio .container .bio-content .text h2 {
         font-size: 32px;
         font-weight: 500;
         margin-bottom: 30px; }
       .bio .container .bio-content .text p {
         color: #6e7373;
-        line-height: 1.5;
+        line-height: 1.8;
         font-size: 20px;
-        max-width: 420px;
         margin-bottom: 25px; }
       .bio .container .bio-content .text .sns-links {
         display: flex; }
@@ -621,6 +680,7 @@ footer p {
 .services .service-content .skill-list {
   padding: 30px 0 0;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap; }
   .services .service-content .skill-list .box {
     position: relative;
@@ -628,6 +688,19 @@ footer p {
     width: 30%;
     height: 240px;
     background: url("../images/services1.jpg") 50% 50%/cover no-repeat; }
+    @media only screen and (max-width: 1200px) {
+      .services .service-content .skill-list .box {
+        max-width: 992px; } }
+    @media only screen and (max-width: 992px) {
+      .services .service-content .skill-list .box {
+        margin: 12px;
+        width: 30%; } }
+    @media only screen and (max-width: 768px) {
+      .services .service-content .skill-list .box {
+        width: 45%; } }
+    @media only screen and (max-width: 542px) {
+      .services .service-content .skill-list .box {
+        width: 100%; } }
     .services .service-content .skill-list .box:nth-child(2) {
       background: url("../images/services2.jpg") 50% 50%/cover no-repeat; }
     .services .service-content .skill-list .box:nth-child(3) {
@@ -664,10 +737,17 @@ footer p {
   .resume .expertise .list-box {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding: 20px 0 0; }
     .resume .expertise .list-box .top-box {
-      width: 47%;
+      width: 46%;
       margin: 0 15px; }
+      @media only screen and (max-width: 768px) {
+        .resume .expertise .list-box .top-box {
+          width: 44%; } }
+      @media only screen and (max-width: 542px) {
+        .resume .expertise .list-box .top-box {
+          width: 100%; } }
       .resume .expertise .list-box .top-box h3 {
         margin: 20px 0 0;
         font-size: 20px;
@@ -693,7 +773,8 @@ footer p {
           background: #fd735a;
           border-radius: 6px; }
         .resume .expertise .list-box .top-box .content .box p {
-          color: #868a8a; }
+          color: #868a8a;
+          line-height: 30px; }
       .resume .expertise .list-box .top-box .content .list p {
         font-size: 14px;
         padding: 0 15px;
@@ -727,6 +808,7 @@ footer p {
 .work .flip {
   padding-top: 20px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap; }
   .work .flip img {
     width: 400px;
@@ -750,6 +832,12 @@ footer p {
       height: 280px;
       background: #fff;
       border: 1px solid #eee; }
+      @media only screen and (max-width: 768px) {
+        .testimony .container .box .content {
+          max-width: 90%; } }
+      @media only screen and (max-width: 542px) {
+        .testimony .container .box .content {
+          max-width: 100%; } }
       .testimony .container .box .content img {
         width: 100px;
         height: 100px;
@@ -928,17 +1016,31 @@ footer p {
     justify-content: center; }
   .map .address .content {
     display: flex;
-    justify-content: space-around; }
+    justify-content: space-around;
+    flex-wrap: wrap; }
     .map .address .content .box {
-      margin: 0 15px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 33.33%;
+      width: 32.33%;
       padding: 24px;
       border: 1px solid #eee;
       background: #fff; }
+      @media only screen and (max-width: 1200px) {
+        .map .address .content .box {
+          width: 32.33%; } }
+      @media only screen and (max-width: 992px) {
+        .map .address .content .box {
+          width: 28.33%; } }
+      @media only screen and (max-width: 768px) {
+        .map .address .content .box {
+          margin: 15px 0;
+          width: 100%; } }
+      @media only screen and (max-width: 542px) {
+        .map .address .content .box {
+          margin: 15px 0;
+          width: 100%; } }
       .map .address .content .box:nth-child(2) i {
         font-size: 40px; }
       .map .address .content .box i {
@@ -961,6 +1063,10 @@ footer p {
 .contact .name {
   display: flex;
   justify-content: space-around; }
+  @media only screen and (max-width: 992px) {
+    .contact .name {
+      display: flex;
+      flex-direction: column; } }
   .contact .name input {
     width: 50%;
     height: auto;
@@ -969,6 +1075,9 @@ footer p {
     padding: 2em 1.5em;
     margin: 20px 10px 0 0;
     border: 1px solid #eee; }
+    @media only screen and (max-width: 992px) {
+      .contact .name input {
+        width: 100%; } }
     .contact .name input:nth-child(2) {
       margin-right: 0; }
   .contact .name input::-webkit-input-placeholder {

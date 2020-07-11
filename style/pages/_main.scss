@@ -101,6 +101,14 @@
         .photo {
           flex: 5;
           text-align: center; /* 인라인요소는 부모에 ta:c를 주면 가운데로 온다. */
+
+          @include screen-sm {
+            display: none;
+          }
+          @include screen-xs {
+            display: none;
+          }
+
           img {
             width: 300px;
             height: 300px;
@@ -112,6 +120,19 @@
         .text {
           flex: 6;
 
+          @include screen-sm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+          @include screen-xs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+
           h2 {
             font-size: 32px;
             font-weight: 500;
@@ -120,9 +141,9 @@
 
           p {
             color: #6e7373;
-            line-height: 1.5;
+            line-height: 1.8;
             font-size: 20px;
-            max-width: 420px;
+            //max-width: 420px;
             margin-bottom: 25px;
           }
 
@@ -155,6 +176,7 @@
     .skill-list {
       padding: 30px 0 0;
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
 
       .box {
@@ -163,6 +185,20 @@
         width: 30%;
         height: 240px;
         background: url("../images/services1.jpg") 50% 50% / cover no-repeat;
+
+        @include screen-lg { //스크린 1200px 이상일 때
+          max-width: 992px;
+        }
+        @include screen-md { //스크린 992px 이상일 때
+          margin: 12px;
+          width: 30%;
+        }
+        @include screen-sm {
+          width: 45%;
+        }
+        @include screen-xs {
+          width: 100%;
+        }
 
         &:nth-child(2) {
           background: url("../images/services2.jpg") 50% 50% / cover no-repeat;
@@ -223,11 +259,24 @@
     .list-box {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       padding: 20px 0 0;
 
       .top-box {
-        width: 47%;
+        width: 46%;
         margin: 0 15px;
+        @include screen-lg { //스크린 1200px 이상일 때
+
+        }
+        @include screen-md { //스크린 992px 이상일 때
+
+        }
+        @include screen-sm { //스크린 768px 이상일 때
+          width: 44%;
+        }
+        @include screen-xs { //스크린 768px 이상일 때
+          width: 100%;
+        }
 
         h3 {
           margin: 20px 0 0;
@@ -265,6 +314,7 @@
 
             p {
               color: #868a8a;
+              line-height: 30px;
             }
           }
 
@@ -320,6 +370,7 @@
   .flip {
     padding-top: 20px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 
     img {
@@ -350,6 +401,13 @@
         height: 280px;
         background: #fff;
         border: 1px solid #eee;
+
+        @include screen-sm { //스크린 768px 이상일 때
+          max-width: 90%;
+        }
+        @include screen-xs { //스크린 768px 이상일 때
+          max-width: 100%;
+        }
 
         img {
           width: 100px;
@@ -633,17 +691,32 @@
     .content {
       display: flex;
       justify-content: space-around;
+      flex-wrap: wrap;
 
       .box {
-        margin: 0 15px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 33.33%;
+        width: 32.33%;
         padding: 24px;
         border: 1px solid #eee;
         background: #fff;
+
+        @include screen-lg { //스크린 1200px 이상일 때
+          width: 32.33%;
+        }
+        @include screen-md { //스크린 992px 이상일 때
+          width: 28.33%;
+        }
+        @include screen-sm { //스크린 768px 이상일 때
+          margin: 15px 0;
+          width: 100%;
+        }
+        @include screen-xs { //스크린 768px 이상일 때
+          margin: 15px 0;
+          width: 100%;
+        }
 
         &:nth-child(2) {
           i {
@@ -687,6 +760,11 @@
     display: flex;
     justify-content: space-around;
 
+    @include screen-md { //스크린 992px 이상일 때
+      display: flex;
+      flex-direction: column;
+    }
+
     input {
       width: 50%;
       height: auto;
@@ -695,6 +773,10 @@
       padding: 2em 1.5em;
       margin: 20px 10px 0 0;
       border: 1px solid #eee;
+
+      @include screen-md { //스크린 992px 이상일 때
+        width: 100%;
+      }
 
       &:nth-child(2) {
         margin-right: 0;

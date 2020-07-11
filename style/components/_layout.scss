@@ -16,6 +16,18 @@ body {
     max-width: 1230px;
     margin: 0 auto;
     padding: 0 15px;
+    @include screen-lg { //스크린 1200px 이상일 때
+        max-width: 992px;
+    }
+    @include screen-md { //스크린 992px 이상일 때
+        max-width: 100%;
+    }
+    @include screen-sm { //스크린 768px 이상일 때
+        max-width: 100%;
+    }
+    @include screen-xs { //스크린 768px 이상일 때
+        max-width: 100%;
+    }
 }
 
 .section {
